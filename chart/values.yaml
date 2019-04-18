@@ -1,0 +1,11 @@
+replicas: 1
+
+image:
+  repository: conorfennell/retail
+  tag: production
+  pullPolicy: Always
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 100Mi
