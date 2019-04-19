@@ -1,0 +1,17 @@
+---
+settings:
+  code.create.directories: true
+code:
+  paintbatch-com:
+    example-app:
+      version: '0.2'
+      generators:
+      - generator: http4s_0_20
+        target: generated-src/main/scala
+        files:
+        - "*ModelsJson.*"
+        - "*Server.*"
+      - generator: http4s_0_20
+        target: generated-src/test/scala
+        files:
+        - "*Client.*"

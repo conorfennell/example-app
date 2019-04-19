@@ -1,0 +1,50 @@
+{
+  "name": "example-app",
+  "description": "Example app api for examples",
+  "namespace": "com.paintbatch",
+
+  "info": {
+    "contact": {
+      "name": "Conor Fennell",
+      "email": "fennell.conor@gmail.com"
+    }
+  },
+  "enums" : {
+    "status": {
+      "description": "health state of the service",
+      "values": [
+        {
+          "name": "ok"
+        }
+      ]
+    }
+  },
+  "models": {
+    "healthcheck": {
+      "description": "health of the service",
+      "fields": [
+        {
+          "name": "status",
+          "type": "status",
+          "description": "The health status of the service"
+        }
+      ]
+    }
+  },
+
+  "resources": {
+    "healthcheck": {
+      "path": "/_internal_",
+      "operations": [{
+        "method": "GET",
+        "description": "GET health of service",
+        "path": "/healthcheck",
+        "responses": {
+          "200": {
+            "type": "healthcheck"
+          }
+        }
+      }]
+    }
+  }
+}
